@@ -91,7 +91,10 @@ public class Sheet {
 		this.data = newData;
 	}
 
-	public void setRow(int x, Object data[]) {
+	public void setRow(int x, Object newData[]) {
+		for(int i = 0; i < this.height && i < newData.length; i++) {
+			this.data[x][i] = newData[i];
+		}
 	}
 
 	public Object[] getRow(int x) {
@@ -102,6 +105,9 @@ public class Sheet {
 	}
 
 	public void setCol(int y, Object data[]) {
+		for(int i = 0; i < this.width && i < newData.length; i++) {
+			this.data[i][y] = newData[i];
+		}
 	}
 
 	public Object[] getCol(int y) {
