@@ -64,9 +64,31 @@ public class Sheet {
 	}
 
 	public void hFlip() {
+		int newX = 0;
+		int newY = 0;
+		Object newData = new Object[this.width][this.height];
+		for(int i = 0; i < this.width; i++) {
+			for(int j = 0; j < this.height; j++) {
+				newX = this.width - 1 - i;
+				newY = j;
+				newData[newX][newY] = this.data[i][j];
+			}
+		}
+		this.data = newData;
 	}
 
 	public void vFlip() {
+		int newX = 0;
+		int newY = 0;
+		Object newData = new Object[this.width][this.height];
+		for(int i = 0; i < this.width; i++) {
+			for(int j = 0; j < this.height; j++) {
+				newX = i;
+				newY = this.height - 1 - j;
+				newData[newX][newY] = this.data[i][j];
+			}
+		}
+		this.data = newData;
 	}
 
 	public void setRow(int x, Object data[]) {
