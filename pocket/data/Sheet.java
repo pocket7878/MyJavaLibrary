@@ -36,9 +36,31 @@ public class Sheet {
 	}
 
 	public void turnRight() {
+		int newX = 0;
+		int newY = 0;
+		Objecte newData = new Object[this.height][this.width];
+		for(int i = 0; i < this.width; i++) {
+			for(int j = 0; j < this.height; j++) {
+				newX = this.width - 1 - j;
+				newY = i;
+				newData[newX][newY] = this.data[i][j];
+			}
+		}
+		this.data = newData;
 	}
 
 	public void turnLeft() {
+		int newX = 0;
+		int newY = 0;
+		Objecte newData = new Object[this.height][this.width];
+		for(int i = 0; i < this.width; i++) {
+			for(int j = 0; j < this.height; j++) {
+				newX = j
+				newY = this.height - 1 - i;
+				newData[newX][newY] = this.data[i][j];
+			}
+		}
+		this.data = newData;
 	}
 
 	public void hFlip() {
