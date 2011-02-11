@@ -1,0 +1,20 @@
+<project name="pocketJava" basedir="." default="compile">
+
+  <target name="jar" depends="compile">
+    <jar jarfile="pocketJava.jar" basedir="bin">
+      <fileset dir="bin" includes="*.class"/>
+      <fileset dir="pocket" includes="*.java"/>
+    </jar>
+  </target>  
+  
+  <target name="compile">
+    <mkdir dir="bin"/>
+    <javac includeantruntime="false" srcdir="pocket" destdir="bin"/>
+  </target>
+
+  <target name="clean">
+    <delete dir="bin"/>
+    <delete file="pocketJava.jar"/>
+  </target>
+
+</project>
