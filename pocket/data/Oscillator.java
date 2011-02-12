@@ -19,7 +19,7 @@ public class Oscillator {
 
 	public Object next() {
 		Object var = this.data.get(this.pos);
-		if(this.data.size() >= this.pos) {
+		if(this.data.size()-1 != this.pos) {
 			this.pos++;
 		}
 		else {
