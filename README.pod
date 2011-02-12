@@ -48,4 +48,18 @@ Zoom and scrollable gui pane.
 
 =back
 
+=head2 pocket.data.oscillator
+
+Oscillator like data structure.
+
+=over
+
+=item size
+
+=item add
+
+=item next
+
+=back
+
 =cut
