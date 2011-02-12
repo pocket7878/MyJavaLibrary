@@ -85,5 +85,49 @@ class sheetTest {
 			}
 			System.out.println();
 		}
+		System.out.println("====== Turn  hFlip(1) ======");
+		sheet.hFlip();
+		for(int i = 0; i < sheet.getHeight(); i++) {
+			for(int j = 0; j < sheet.getWidth(); j++) {
+				System.out.print("[" + sheet.getCell(j, i) + "]");
+			}
+			System.out.println();
+		}
+		System.out.println("====== Turn  hFlip(2) ======");
+		sheet.hFlip();
+		for(int i = 0; i < sheet.getHeight(); i++) {
+			for(int j = 0; j < sheet.getWidth(); j++) {
+				System.out.print("[" + sheet.getCell(j, i) + "]");
+			}
+			System.out.println();
+		}
+		System.out.println("====== Turn  vFlip(1) ======");
+		sheet.vFlip();
+		for(int i = 0; i < sheet.getHeight(); i++) {
+			for(int j = 0; j < sheet.getWidth(); j++) {
+				System.out.print("[" + sheet.getCell(j, i) + "]");
+			}
+			System.out.println();
+		}
+		System.out.println("====== Turn  vFlip(2) ======");
+		sheet.vFlip();
+		for(int i = 0; i < sheet.getHeight(); i++) {
+			for(int j = 0; j < sheet.getWidth(); j++) {
+				System.out.print("[" + sheet.getCell(j, i) + "]");
+			}
+			System.out.println();
+		}
+		System.out.println("====== Turn  getRow ======");
+		Object[] row = sheet.getRow(1);
+		for(int i = 0; i < row.length; i++) {
+			System.out.print("[" + row[i] + "]");
+		}
+		System.out.println();
+		System.out.println("====== Turn  getCol ======");
+		Object[] col = sheet.getCol(1);
+		for(int i = 0; i < col.length; i++) {
+			System.out.print("[" + col[i] + "]");
+		}
+		System.out.println();
 	}
 }

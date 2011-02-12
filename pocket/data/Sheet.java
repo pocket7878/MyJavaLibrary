@@ -1,4 +1,4 @@
-package pocket.data.Sheet;
+package pocket.data;
 
 public class Sheet {
 	private Object data[][];
@@ -17,10 +17,18 @@ public class Sheet {
 		this.data = new Object[this.width][this.height];
 	}
 
+	public void init(Object var) {
+		for(int i = 0; i < this.width; i++) {
+			for(int j = 0; j < this.height; j++) {
+				this.data[i][j] = var;
+			}
+		}
+	}
+
 	public void resize(int newW, int newH) {
-		Object newData = new Object[newW][newH];
-		for(int i = 0; i < this.width && i < this.newW; i++) {
-			for(int j = 0; j < this.height && j < this.newW; j++) {
+		Object newData[][] = new Object[newW][newH];
+		for(int i = 0; i < this.width && i < newW; i++) {
+			for(int j = 0; j < this.height && j < newH; j++) {
 				newData[i][j] = this.data[i][j];
 			}
 		}
@@ -38,35 +46,43 @@ public class Sheet {
 	public void turnRight() {
 		int newX = 0;
 		int newY = 0;
-		Objecte newData = new Object[this.height][this.width];
+		int tmp = 0;
+		Object newData[][] = new Object[this.height][this.width];
 		for(int i = 0; i < this.width; i++) {
 			for(int j = 0; j < this.height; j++) {
-				newX = this.width - 1 - j;
+				newX = this.height - 1 - j;
 				newY = i;
 				newData[newX][newY] = this.data[i][j];
 			}
 		}
+		tmp = this.width;
+		this.width = this.height;
+		this.height = tmp;
 		this.data = newData;
 	}
 
 	public void turnLeft() {
 		int newX = 0;
 		int newY = 0;
-		Objecte newData = new Object[this.height][this.width];
+		int tmp = 0;
+		Object newData[][] = new Object[this.height][this.width];
 		for(int i = 0; i < this.width; i++) {
 			for(int j = 0; j < this.height; j++) {
-				newX = j
-				newY = this.height - 1 - i;
+				newX = j;
+				newY = this.width - 1 - i;
 				newData[newX][newY] = this.data[i][j];
 			}
 		}
+		tmp = this.width;
+		this.width = this.height;
+		this.height = tmp;
 		this.data = newData;
 	}
 
 	public void hFlip() {
 		int newX = 0;
 		int newY = 0;
-		Object newData = new Object[this.width][this.height];
+		Object newData[][] = new Object[this.width][this.height];
 		for(int i = 0; i < this.width; i++) {
 			for(int j = 0; j < this.height; j++) {
 				newX = this.width - 1 - i;
@@ -80,7 +96,7 @@ public class Sheet {
 	public void vFlip() {
 		int newX = 0;
 		int newY = 0;
-		Object newData = new Object[this.width][this.height];
+		Object newData[][] = new Object[this.width][this.height];
 		for(int i = 0; i < this.width; i++) {
 			for(int j = 0; j < this.height; j++) {
 				newX = i;
@@ -98,22 +114,36 @@ public class Sheet {
 	}
 
 	public Object[] getRow(int x) {
-		Object returnData = new Object[this.height];
+		Object returnData[] = new Object[this.height];
 		for(int i = 0; i < this.height; i++) {
 			returnData[i] = this.data[x][i];
 		}
+		return returnData;
 	}
 
-	public void setCol(int y, Object data[]) {
+	public void setCol(int y, Object newData[]) {
 		for(int i = 0; i < this.width && i < newData.length; i++) {
 			this.data[i][y] = newData[i];
 		}
 	}
 
 	public Object[] getCol(int y) {
-		Object returnData = new Object[this.width];
+		Object returnData[] = new Object[this.width];
 		for(int i = 0; i < this.width; i++) {
 			returnData[i] = this.data[i][y];
 		}
+		return returnData;
+	}
+
+	public Object[] getData() {
+		return this.data;
+	}
+
+	public int getWidth() {
+		return this.width;
+	}
+
+	public int getHeight() {
+		return this.height;
 	}
 }

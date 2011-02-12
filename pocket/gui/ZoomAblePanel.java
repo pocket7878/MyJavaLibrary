@@ -1,11 +1,11 @@
-package pocket.gui.ZoomAblePanel;
+package pocket.gui;
 
 import java.awt.*;
 import java.awt.geom.*;
 import java.awt.Graphics2D;
 import javax.swing.*;
 
-public class ZoomAblePanel extends JPanel implements {
+public class ZoomAblePanel extends JPanel {
     /**
      * 
      */
@@ -22,7 +22,7 @@ public class ZoomAblePanel extends JPanel implements {
 	return ScaleTransform;
     }
     
-    public ZoomAblePanelPanel(CellPanel cpanel)
+    public ZoomAblePanel()
     {
 	Maffine = getMaffine();
     }

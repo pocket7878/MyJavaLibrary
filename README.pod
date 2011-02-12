@@ -1,0 +1,51 @@
+=head1 What is this?
+
+This is my little java library.
+
+=head2 How to use.
+
+ Just run 'ant jar' in top directory.
+
+ Then you'll get pocketJava.jar
+
+=head2 pocket.data.sheet
+
+Paper like 2d array structure.
+
+=over
+
+=item TurnRight
+
+=item TurnLeft
+
+=item Horizontal Flip
+
+=item Vertical Flip
+
+=item getRow
+
+=item setRow
+
+=item getCol
+
+=item setCol
+
+=back
+
+=head2 pocket.gui.ZoomAblePane
+
+Zoom and scrollable gui pane.
+
+=over
+
+=item zoom
+
+=item unzoom
+
+=item scrollX
+
+=item scrollY
+
+=back
+
+=cut
