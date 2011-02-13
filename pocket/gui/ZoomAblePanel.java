@@ -42,19 +42,23 @@ public class ZoomAblePanel extends JPanel {
 
     //Scrolle Method
     public void scrollX() {
-	    currentMoveX++;
+	    this.currentMoveX -= 1;
+	    Maffine = getMaffine();
     }
 
     public void scrollX(double sx) {
-	    this.currentMoveX += sx;
+	    this.currentMoveX -= sx;
+	    Maffine = getMaffine();
     }
 
     public void scrollY() {
-	    currentMoveY++;
+	    currentMoveY -= 1;
+	    Maffine = getMaffine();
     }
 
     public void scrollY(double sy) {
-	    this.currentMoveY += sy;
+	    this.currentMoveY -= sy;
+	    Maffine = getMaffine();
     }
 
     @Override
